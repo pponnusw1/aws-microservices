@@ -6,7 +6,7 @@ pipeline{
         steps {
             sh 'mkdir -p cicd'
             dir("cicd"){
-                url: 'https://github.com/pponnusw1/aws-microservices.git'
+                git url: 'https://github.com/pponnusw1/aws-microservices.git'
                 }
             }
         }

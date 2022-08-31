@@ -1,6 +1,15 @@
 pipeline{
     agent any
     stages{
+	
+	   stage('Clone repo') {
+        steps {
+            sh 'mkdir -p cicd'
+            dir("cicd"){
+                url: 'https://github.com/pponnusw1/aws-microservices.git'
+                }
+            }
+        }
 
        stage('Building Docker Image') {
 		   steps {

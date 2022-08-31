@@ -1,5 +1,6 @@
 pipeline{
-    
+    agent none
+	
     stages{
 	   agent any
 	   stage('Clone repo') {

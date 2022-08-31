@@ -13,7 +13,7 @@ pipeline{
 
        stage('Building Docker Image') {
 	   
-	       agent { dockerfile true }
+	       agent any
 	   
 		   steps {
 

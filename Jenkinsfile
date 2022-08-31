@@ -2,7 +2,7 @@ pipeline{
     agent any
 	
     stages{
-	   agent any
+
 	   stage('Clone repo') {
         steps {
             sh 'mkdir -p cicd'

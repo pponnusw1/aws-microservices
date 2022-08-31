@@ -12,15 +12,18 @@ pipeline{
         }
 
        stage('Building Docker Image') {
+	   
+	       agent { dockerfile true }
+	   
 		   steps {
 
 		       sh 'docker system prune -a -f || true'
 
-		       dir ('03-aws-currency-exchange-service-h2/') {
+		       dir ('cicd/03-aws-currency-exchange-service-h2/') {
 				  sh 'docker  build -t pponnusw/currency-exchange-service:1.0 .'
 			   }
 
-			   dir ('05-aws-currency-conversion-service/') {
+			   dir ('cicd/05-aws-currency-conversion-service/') {
 				  sh 'docker build -t pponnusw/currency-conversion-service:1.0 .'
 			   }
 

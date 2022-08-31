@@ -1,7 +1,7 @@
 pipeline{
-    agent none
+    
     stages{
-	
+	   agent any
 	   stage('Clone repo') {
         steps {
             sh 'mkdir -p cicd'
@@ -12,8 +12,6 @@ pipeline{
         }
 
        stage('Building Docker Image') {
-	   
-	       agent any
 	   
 		   steps {
 

@@ -16,11 +16,11 @@ pipeline{
         }
 	   stage('Build Artifact') {
         steps {
-            dir("cicd/03-currency-exchange-service-h2"){
-               sh 'mvn clean install package' 
+            dir("cicd"){
+               sh 'mvn clean package' 
               }
-			dir("cicd/05-currency-conversion-service"){
-               sh 'mvn clean install package' 
+			dir("cicd"){
+               sh 'mvn clean package' 
               }  
             }
          }

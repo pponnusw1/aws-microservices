@@ -16,10 +16,10 @@ pipeline{
         }
 	   stage('Build Artifact') {
         steps {
-            dir("cicd"){
+            dir("cicd/03-aws-currency-exchange-service-h2/"){
                sh 'mvn clean package' 
               }
-			dir("cicd"){
+			dir("cicd/05-aws-currency-conversion-service/"){
                sh 'mvn clean package' 
               }  
             }

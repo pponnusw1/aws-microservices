@@ -11,13 +11,20 @@ pipeline{
                 }
             }
         }
-		
-		stage('Create artifact') {
+	   stage('Build Artifact') {
         steps {
-            WORKSPACE=/home/jenkins/jenkins-data/jenkins_home/workspace/pipeline-docker-maven
-            docker run --rm  -v  $WORKSPACE/java-app:/app -v /root/.m2/:/root/.m2/ -w /app maven:3-alpine "$@"
+            dir("cicd/03-currency-exchange-service-h2"){
+               sh 'mvn -B -DskipTests clean package' 
+              }
+            }
+			
+			dir("cicd/05-currency-conversion-service"){
+               sh 'mvn -B -DskipTests clean package' 
+              }
+            }
         }
-
+		
+		
        stage('Building Docker Image') {
 	   
 		   steps {

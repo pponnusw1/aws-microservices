@@ -21,8 +21,7 @@ pipeline{
 			dir("cicd/05-currency-conversion-service"){
                sh 'mvn -B -DskipTests clean package' 
               }
-            }
-        }
+         }
 		
 		
        stage('Building Docker Image') {

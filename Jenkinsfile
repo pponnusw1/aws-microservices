@@ -9,7 +9,6 @@ pipeline{
 
 	   stage('Clone repo') {
         steps {
-            sh 'mkdir -p cicd'
             dir("cicd"){
                 git url: 'https://github.com/pponnusw1/aws-microservices.git'
                 }

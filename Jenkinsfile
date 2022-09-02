@@ -59,7 +59,7 @@ pipeline{
 					remote.user = 'ubuntu'
 					remote.host = 'ec2-3-89-243-135.compute-1.amazonaws.com'
 					remote.name = 'Microservices(Docker)'
-					remote.identityFile = '/opt/app-key.ppk'
+					remote.identityFile = '/opt/app-key.pem'
 					remote.allowAnyHosts = 'true'
 					echo 'successfully connected the release environment'
 					sshCommand remote: remote, command: 'sudo docker system prune -a -f || true'

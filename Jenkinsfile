@@ -57,7 +57,7 @@ pipeline{
                 script{
 					def remote = [:]
 					remote.user = 'ubuntu'
-					remote.host = 'ec2-3-235-54-5.compute-1.amazonaws.com'
+					remote.host = 'ec2-54-82-24-21.compute-1.amazonaws.com'
 					remote.name = 'Microservices(Docker)'
 					remote.identityFile = '/opt/aws-key.ppk'
 					remote.allowAnyHosts = 'true'

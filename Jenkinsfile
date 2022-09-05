@@ -13,7 +13,19 @@ pipeline{
                 git url: 'https://github.com/pponnusw1/aws-microservices.git'
                 }
             }
-        }
+       }
+	   
+	   stage('Junit test case ') {
+        steps {
+            dir("cicd/03-currency-exchange-service-h2/"){
+               sh 'mvn test' 
+              }
+			dir("cicd/05-currency-conversion-service/"){
+               sh 'mvn test' 
+              }  
+            }
+       }
+	   
 	   stage('Build Artifact') {
         steps {
             dir("cicd/03-currency-exchange-service-h2/"){
@@ -23,7 +35,7 @@ pipeline{
                sh 'mvn clean package' 
               }  
             }
-         }
+        }
 		
 		
        stage('Building Docker Image') {
